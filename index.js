@@ -31,6 +31,8 @@ function pokemonCreator(pokemon) {
     var poster = elementCreator('img');
     var inform = elementCreator('div');
     var hr = elementCreator('hr')
+    var heart = elementCreator('i')
+    var nameHeart = elementCreator('div')
 
 
 
@@ -40,6 +42,15 @@ function pokemonCreator(pokemon) {
     types.textContent = pokemon.type.join(" , ");
     elheight.textContent = pokemon.height;
     elweight.textContent = pokemon.weight;
+
+
+    heart.classList.add('bi')
+    heart.classList.add('bi-heart')
+    heart.style.margin = '0 30px 0 0'
+    nameHeart.appendChild(title)
+    nameHeart.appendChild(heart)
+    nameHeart.style.display = 'flex'
+    nameHeart.classList.add('justify-content-between');
 
     inform.appendChild(elheight);
     inform.appendChild(elweight);
@@ -53,7 +64,7 @@ function pokemonCreator(pokemon) {
 
     item.appendChild(poster);
     item.appendChild(hr);
-    item.appendChild(title);
+    item.appendChild(nameHeart);
     item.appendChild(types);
     item.appendChild(inform);
 

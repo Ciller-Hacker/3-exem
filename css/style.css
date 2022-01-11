@@ -6,6 +6,7 @@ body {
 .poki{
     max-width: 1338px !important;
     padding: 0 !important;
+    justify-content: space-between;
 }
 
 
@@ -24,6 +25,14 @@ body {
     margin-top: 7px;
     margin-left: -70px;
 }
+
+   
+.logo{
+    margin: 0;
+    margin-right: 304px;
+    margin-left: 394px;
+}
+    
 
 
 .types-select {
