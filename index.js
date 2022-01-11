@@ -1,8 +1,25 @@
 var eltypes = document.querySelector('.types-select')
-var elpokemonList = document.querySelector('.films-wrapper');
+var elpokemonList = document.querySelector('.pokemons-wrapper');
+var btnsubmit = document.querySelector('.submit');
+var extresearch = document.querySelector(".js__search")
+var alphabet = document.querySelector('.az-select')
+var pokemonType = document.querySelector('.types-select')
+
+
+
+btnsubmit.addEventListener('click', function(evt){
+   evt.preventDefault();
+
+    console.log(extresearch.value);
+    console.log(alphabet.value)
+})
+
+
 
 function elementCreator(tagName) {
     return document.createElement(tagName);
+}
+
 
 
 function pokemonCreator(pokemon) {
@@ -10,26 +27,34 @@ function pokemonCreator(pokemon) {
     var title = elementCreator('h5');
     var elheight = elementCreator('h5');
     var elweight = elementCreator('h5');
-   // var types = elementCreator('p');
+    var types = elementCreator('p');
     var poster = elementCreator('img');
     var inform = elementCreator('div');
-
+    var hr = elementCreator('hr')
 
 
 
     poster.src = pokemon.img;
     poster.width = '157';
     title.textContent = pokemon.name;
-   // types.textContent = pokemon.type.join(" , ");
+    types.textContent = pokemon.type.join(" , ");
     elheight.textContent = pokemon.height;
     elweight.textContent = pokemon.weight;
 
     inform.appendChild(elheight);
     inform.appendChild(elweight);
+    inform.classList.add('pocemon__inform');
+    elheight.classList.add('inform__height');
+    hr.style.height = '2px'
+    hr.style.opacity = '1'
+    hr.style.margin = '0 0 20px 0'
+    title.style.margin = '0 0 0 30px';
+    types.style.margin = '0 0 0 30px';
 
-    item.appendChild(title);
-  //  item.appendChild(types);
     item.appendChild(poster);
+    item.appendChild(hr);
+    item.appendChild(title);
+    item.appendChild(types);
     item.appendChild(inform);
 
     elpokemonList.appendChild(item);
@@ -37,11 +62,8 @@ function pokemonCreator(pokemon) {
 
 for (var i = 0; i < pokemons.length; i++) {
     pokemonCreator(pokemons[i]);
-  
-
-
 }
 
 
-}
+
 
